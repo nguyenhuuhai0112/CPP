@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+bool is_perfect_number(int num) {
+    int sum = 0;
+    
+    // Tính tổng các ước số của số num
+    for (int i = 1; i < num; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+    
+    // Kiểm tra xem tổng các ước số có bằng số num hay không
+    if (sum == num) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    int num;
+    cout << "Nhập số cần kiểm tra: ";
+    cin >> num;
+    
+    // Kiểm tra xem số có phải là số hoàn hảo hay không
+    if (is_perfect_number(num)) {
+        cout << num << " là số hoàn hảo." << endl;
+    } else {
+        cout << num << " không phải là số hoàn hảo." << endl;
+    }
+    
+    return 0;
+}
